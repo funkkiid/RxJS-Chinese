@@ -1,6 +1,6 @@
 # Summary
 
 ## Overview
-* [README](README.md)
+* [Introduction](README.md)
 * [Rookie primer](rookie-primer.md)
 
