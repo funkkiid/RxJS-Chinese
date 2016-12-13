@@ -7,4 +7,5 @@
 * [Observer](observer.md)
 * [Subscriptiom](subscriptiom.md)
 * [Subject](subject.md)
+* [Operators](operators.md)
 
