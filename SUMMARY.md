@@ -10,8 +10,8 @@
 * [Operators](operators.md)
 * [Scheduler](scheduler.md)
 
-## Installtion
-* [Installtion](installtion.md)
+## Installation
+* [Installation](installtion.md)
 
 ## Tutorial
 
