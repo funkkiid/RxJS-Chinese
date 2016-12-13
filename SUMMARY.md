@@ -11,6 +11,7 @@
 * [Scheduler](scheduler.md)
 
 ## Installtion
+* [Installtion](installtion.md)
 
 ## Tutorial
 
