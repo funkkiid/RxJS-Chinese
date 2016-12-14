@@ -14,6 +14,7 @@
 * [Installation](installtion.md)
 
 ## Tutorial
+* [Tutorial](tutorial.md)
 
 ## Reference
 
