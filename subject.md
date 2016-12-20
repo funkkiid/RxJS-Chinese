@@ -78,7 +78,7 @@ multicasted.connect();
 ```
 multicast方法返回一个看起来很像普通的可观察对象的可观察对象，但是在订阅时却有着和Subject一样的行为，multicast返回一个**ConnectableObservable**，它只是一个具有connect（）方法的Observable。
 
-connect()方法精确的在决定何时开始分享可观察对象的执行是非常重要的。 因为connect（）在source下面有source.subscribe（subject），connect（）返回一个Subscription，你可以取消订阅，以取消共享的Observable执行。
+connect()方法对于在决定何时开始分享可观察对象的执行是非常重要的。 因为connect（）在source下面有source.subscribe（subject），connect（）返回一个Subscription，你可以取消订阅，以取消共享的Observable执行。
 
 
 ####reference counting引用计数
