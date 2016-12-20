@@ -1,13 +1,12 @@
-#
-observable可观察对象
-可观察对象以惰性的方式推送多值的集合
+#observable可观察对象
+可观察对象以惰性的方式推送多值的集合。
 
 
 |Single单值|Multiple多值|
 -|
 pull拉|Function|Iterator
 push推|Promise|Observable
-下面的例子是一个可观察对象推送1,2，3,4个值，一旦它被订阅1,2，3,就会被推送，4则会在订阅发生一秒之后被推送，紧接着完成推送。
+下面的例子是一个推送1,2，3,4数值的可观察对象，一旦它被订阅1,2，3,就会被推送，4则会在订阅发生一秒之后被推送，紧接着完成推送。
 ```
 var observable = Rx.Observable.create(function (observer) {
 observer.next(1);
