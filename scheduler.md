@@ -69,3 +69,8 @@ var proxyObserver = {
   // ...
 }
 ```
+
+###scheduler Types
+Scheduler|Purpose|
+-|---
+null|通过不传递任何调度程序，通知被同步和递归地传递。 用于恒定时操作或尾递归操作。
