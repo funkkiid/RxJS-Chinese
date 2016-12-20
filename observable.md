@@ -382,7 +382,7 @@ var unsubscribe = subscribe({next: (x) => console.log(x)});
 // Later:
 unsubscribe(); // dispose the resources
 ```
-我们使用诸如可观察对象，观察者，和订阅等Rx类型的原因是通过操作符能够兼顾安全性(例如Observable Contract)和相似性。
+我们使用诸如可观察对象，观察者，和订阅等Rx类型的原因是能够兼顾安全性(例如Observable,Observer,Subscription)和操作符的的可组合性。
 
 
 
