@@ -208,7 +208,7 @@ observerB: 2
 observerA: 3
 observerB: 3
 ```
-###ReplaySubject 复演主题(自己觉得这样翻译比较好理解，从新发送过去的值)
+###ReplaySubject 
 一个ReplaySubject类似于一个BehaviorSubject，因为它可以发送一个过去的值(old values)给一个新的订阅者，但是它也可以记录可观察对象的**一部分**执行。
 >一个ReplaySubject 从一个可观察对象的执行中记录多个值，并且可以重新发送给新的订阅者。
 
