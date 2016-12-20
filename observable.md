@@ -365,7 +365,7 @@ clearInterval(intervalID);
 };
 });
 ```
-就像observable.subscribe类似于Observable.create(function subscribe(){...}),我们从subscribe函数中返回的unsubscribe函数在概念上等价于subscription.unsubscription。事实上，如果我们移除环绕于这些概念之外的ReactiveX类型，也就仅仅只剩下更加直白的JavaScript。
+就像observable.subscribe类似于Observable.create(function subscribe(){...}),我们从subscribe函数中返回的unsubscribe函数在概念上等价于subscription.unsubscription。事实上，如果我们移除环绕于这些概念之外的ReactiveX类型，也就只剩下更加直观的JavaScript。
 ```
 function subscribe(observer) {
 var intervalID = setInterval(() => {
