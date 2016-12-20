@@ -348,7 +348,7 @@ subscription.unsubscribe();
 ```
 >在你订阅了之后，你将会得到一个Subscription对象，它表示正在进行的执行。大胆的去使用unsubscribe()去终止执行吧。
 
-当我们使用create()创建可观察对象，每一个可观察对象必须确定怎样去处理执行的资源。你可以通过在subscribe函数内返回一个定制的unsubscribe函数老做到这一点。
+当我们使用create()创建可观察对象，每一个可观察对象必须确定怎样去处理该执行的资源。你可以通过在subscribe函数内返回的subscription调用unsubscribe函数做到这一点。
 
 作为示例，下面是怎样去清除一个serInterval间隔执行
 
