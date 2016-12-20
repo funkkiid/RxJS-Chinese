@@ -18,7 +18,7 @@ observer.complete();
 }, 1000);
 });
 ```
-想要调用可观察对象然后得到它所推送的值，我们需要事先订阅它，如下
+调用可观察对象然后得到它所推送的值，我们订阅它，如下
 ```
 console.log('just before subscribe');
 observable.subscribe({
