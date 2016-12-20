@@ -275,8 +275,8 @@ observerA: 6
 observerB: 6
 ...
 ```
-###AsyncSubject同步主题
-同步主题是另一个变体，它只发送给观察者可观察对象执行的最新值，并且仅在执行结束时。
+###AsyncSubject
+AsyncSubject是另一个变体，它只发送给观察者可观察对象执行的最新值，并且仅在执行结束时。
 
 ```
 var subject = new Rx.AsyncSubject();
