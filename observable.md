@@ -232,7 +232,7 @@ console.log('after');
 总结:
 * fun.call()意味着同步的给我**一个**值
 * observable.subscribe()意味着给我_**任意多个**_值，同步也好异步也罢。
-#剖析可观察对象的
+##剖析可观察对象
 使用Rx.Observable.create或者一个能产生可观察对象的操作符来创造一个可观察对象，使用一个观察者订阅它，执行然后给观察者发送next/error/complete通知。他们的执行可能会被disposed(处理)。这四个方面均被编码进可观察对象的实例中。但是其中的某些方面和其他的类型有关，如Observer和Subscription
 
 
