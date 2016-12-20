@@ -22,10 +22,12 @@ observable.subscribe(observer)
 RxJS中的观察者是可选的，如果你不提供某个回调函数，可观察对象的执行仍然会照常发生，当然某个类型的通知将不会发生，因为在观察者对象中没有对应于他们的回调函数。
 
 下面的例子中是一个没有complete回调的观察者对象:
+```
 var observer={
-next:x=&gt;console.log\('Observer got a next value: ' + x\),
-error: err =&gt; console.error\('Observer got an error: ' + err\),
+next:x=>console.log('Observer got a next value: ' + x),
+error: err => console.error('Observer got an error: ' + err),
 }
+```
 
 当订阅一个可观察对象，你仅仅提供回调来作为参数就够了，并不需要完整的观察者对象，作为示例:
 
