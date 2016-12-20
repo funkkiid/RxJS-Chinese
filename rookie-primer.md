@@ -86,7 +86,7 @@ Rx.Observable.fromEvent(button, 'click')
 
 下面的程序可以在每次点击鼠标时获取X坐标位置
 
-单纯的JS实现
+纯的JS实现
 
 
 
