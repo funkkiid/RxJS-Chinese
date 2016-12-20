@@ -274,7 +274,7 @@ observable.subscribe和Observable.create(function subscribe(observer){})的subcr
 
 完全不同于诸如addEventListener/removeEventListener事件句柄API.使用observable.subscribe,给定的观察者并没有作为一个监听者被注册。可观察对象甚至也不保存有哪些观察者。
 
-订阅是启动可观察对象执行和发送值或者事件给这次执行的观察者的简单方式。
+订阅是启动可观察对象执行和发送值或者事件给观察者的简单方式。
 
 ###执行可观察对象
 在Observable.create(function(observer){...})中的代码，代表了一个可观察对象的执行，一个仅在观察者订阅的时候发生的惰性计算。执行随着时间产生多个值，以同步或者异步的方式。
