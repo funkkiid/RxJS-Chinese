@@ -29,7 +29,7 @@ error: err => console.error('Observer got an error: ' + err),
 }
 ```
 
-当订阅一个可观察对象，你仅仅提供回调来作为参数就够了，并不需要完整的观察者对象，作为示例:
+当订阅一个可观察对象，你可能仅仅提供回调来作为参数就够了，并不需要完整的观察者对象，作为示例:
 
 ```
 observable.subscribe(x => console.log('Observer got a next value: ' + x));
