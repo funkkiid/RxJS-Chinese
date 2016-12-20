@@ -67,7 +67,7 @@ RxJS引入了Observables(可观察对象)，一个全新的"推体系"。一个�
 
 
 ###可观察对象——作为更一般化的函数
-与常规相悖的是，可观察对象不像EventEmitters(事件驱动)，也不想Promises因为它可以返回多个值。可观察对象可能会在某些情况下有点像EventEmitters(事件驱动)，也即是当它们使用Subjects被多播时，但是大多数情况下，并不像EventEmitters.
+与常见的主张相悖的是，可观察对象不像EventEmitters(事件驱动)，也不象Promises因为它可以返回多个值。可观察对象可能会在某些情况下有点像EventEmitters(事件驱动)，也即是当它们使用Subjects被多播时，但是大多数情况下，并不像EventEmitters.
 
 > 可观察对象像一个零参的函数，但是允许返回多个值使得其更加的一般化。
 
