@@ -57,7 +57,7 @@ push推|Active:按自己的节奏生产数据|Passive:对接收的数据做出�
 [Promise(承诺)](http://es6.ruanyifeng.com/#docs/promise))是当今JS中最常见的Push推体系，一个Promise(数据的生产者)发送一个resolved value(成功状态的值)来注册一个回调(数据消费者)，但是不同于函数的地方的是：Promise决定着何时数据才被推送至这个回调函数。
 
 
-RxJS引入了Observables(可观察对象)，一个全新的"推体系"。一个可观察对象是一个产生多值的生产者，并"推送"Observer(观察者)。
+RxJS引入了Observables(可观察对象)，一个全新的"推体系"。一个可观察对象是一个产生多值的生产者，并"推送g给"Observer(观察者)。
 * Function:惰性计算，只在调用时同步返回一个值
 * Generator(生成器):惰性计算，在迭代时同步的返回零到无限个值(如果有可能的话)
 * Promise是一个可能(也可能不)返回一个单值的。
