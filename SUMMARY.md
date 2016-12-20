@@ -16,5 +16,16 @@
 ## Tutorial
 * [Tutorial](tutorial.md)
 
-## Reference
+## Class Reference
+* Oberver
+* Observable
+* Subscription
+* Subscriber
+* SubjectSubscriber
+* Notification
+* Subject
+* AsyncSubject
+* [BehaviorSubject](behaviorsubject.md)
+* [ReplaySubject](replaysubject.md)
+* SubjectSubscriber
 
