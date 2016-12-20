@@ -36,4 +36,36 @@ done
 注意如何获取值...被发送在"just after subscribe
 "之后，这是不同于我们目前为止所看到的默认行为。 这是因为observeOn（Rx.Scheduler.async）在Observable.create和最终的Observer之间引入了一个代理Observer。 让我们重命名一些标识符，使这个重要的区别在下面代码中显而易见：
 
+```
+var observable = Rx.Observable.create(function (proxyObserver) {
+  proxyObserver.next(1);
+  proxyObserver.next(2);
+  proxyObserver.next(3);
+  proxyObserver.complete();
+})
+.observeOn(Rx.Scheduler.async);
 
+var finalObserver = {
+  next: x => console.log('got value ' + x),
+  error: err => console.error('something wrong occurred: ' + err),
+  complete: () => console.log('done'),
+};
+
+console.log('just before subscribe');
+observable.subscribe(finalObserver);
+console.log('just after subscribe');
+```
+proxyObserver在 observeOn(Rx.Scheduler.async)被创建，它的next通知函数大约如下:
+```
+var proxyObserver = {
+  next: (val) => {
+    Rx.Scheduler.async.schedule(
+      (x) => finalObserver.next(x),
+      0 /* delay */,
+      val /* will be the x for the function above */
+    );
+  },
+
+  // ...
+}
+```
