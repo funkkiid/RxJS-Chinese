@@ -43,7 +43,7 @@ done
 
 什么是"_Pull拉_"？在"拉"体系中，数据的消费者决定何时从数据生产者那里获取数据，而生产者自身并不会意识到什么时候数据将会被发送给消费者。
 
-每一个JS函数都是一个“拉”体系，函数是数据的生产者，调用函数的代码通过“拉出”一个单一的返回值来消费该数据(return)。
+每一个JS函数都是一个“拉”体系，函数是数据的生产者，调用函数的代码通过“拉出”一个单一的返回值来消费该数据(return 语句)。
 
 ES6介绍了[iterator迭代器](http://es6.ruanyifeng.com/#docs/iterator)和[Generator生成器](http://es6.ruanyifeng.com/#docs/generator)——另一中“拉”体系，调用iterator.next()的代码是消费者，可从中拉取_多个值_。
 
