@@ -33,7 +33,7 @@ got value 2
 got value 3
 done
 ```
-注意通知如何获取值...被发送在"just after subscribe
+注意如何获取值...被发送在"just after subscribe
 "之后，这是不同于我们目前为止所看到的默认行为。 这是因为observeOn（Rx.Scheduler.async）在Observable.create和最终的Observer之间引入了一个代理Observer。 让我们重命名一些标识符，使这个区别在示例代码中显而易见：
 
 
