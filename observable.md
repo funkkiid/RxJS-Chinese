@@ -269,7 +269,7 @@ observable.subscribe(x => console.log(x));
 ```
 observable.subscribe和Observable.create(function subscribe(observer){})的subcribe回调函数有着同样的名字并不是因缘巧合。在RxJS中，他们是不同的，但是为了更使用的目的，你可以认为他们在概念上是等价的。
 
-这显示出对于同一个可观察对象进行订阅的多个观察者之间的回调函数是不共享信息的。当使用observer调用observable.subscribe时，Observable.create(function subscribe(observer){})中的subscribe函数为既定的observer运行。每次调用observable.subscribe为给定的观察者触发它自身独立的设置。
+这显示出对于同一个可观察对象进行订阅的多个观察者之间的回调函数是不共享信息的。当使用observer调用observable.subscribe时，Observable.create(function subscribe(observer){})中的subscribe函数为既定的observer运行。每次调用observable.subscribe为给定的观察者触发它自身独立的设定程序。
 >订阅一个可观察对象就像调用一个函数，在数据将被发送的地方提供回调。
 
 完全不同于诸如addEventListener/removeEventListener事件句柄API.使用observable.subscribe,给定的观察者并没有作为一个监听者被注册。可观察对象甚至也不保存有哪些观察者。
