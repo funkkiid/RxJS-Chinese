@@ -178,7 +178,7 @@ observerB: 2
 observerB unsubscribed
 ```
 引用计数方法refCount()仅存在于ConnectableObservable，并且它返回一个Obsevable,而不是另一个ConnectableObservable。
-###BehaviorSubject行为主题
+###BehaviorSubject
 Subjects的一个变体是BehaviorSubject,其有"当前值"的概念。它**储存着**要发射给消费者的最新的值。**无论何时**一个新的观察者订阅它，都会立即接受到这个来自BehaviorSubject的"当前值"。
 >BehaviorSubject对于表示"随时间的值"是很有用的。举个例子，人的生日的事件流是一个Subject,然而人的年龄的流是一个BehaviorSubject。
 
