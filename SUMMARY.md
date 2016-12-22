@@ -17,15 +17,4 @@
 * [Tutorial](tutorial.md)
 
 ## Class Reference
-* [class-Oberver](oberver.md)
-* [class-Observable](observable.md)
-* Subscription
-* Subscriber
-* SubjectSubscriber
-* Notification
-* Subject
-* AsyncSubject
-* [BehaviorSubject](behaviorsubject.md)
-* [ReplaySubject](replaysubject.md)
-* SubjectSubscriber
 
