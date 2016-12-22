@@ -18,4 +18,6 @@ Observable.lift
 
 
 #####Static Method Summary
+Public static|bindCallback(func:function,selector:function,scheduler:Scheduler):Observable
+---|---
 
