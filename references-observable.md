@@ -16,3 +16,6 @@ Observable.create
 
 Observable.lift
 
+
+#####Static Method Summary
+
