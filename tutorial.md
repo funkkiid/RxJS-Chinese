@@ -46,6 +46,7 @@ var myObservable = Rx.Observable.create(observer => {
 });
 myObservable.subscribe(value => console.log(value));
 ```
+你选择哪一个取决于场景.通常当你想封装随时间产生值的功能时，Observable是很好的选择。另一个websocket连接例子，使用Subject可以从任何地方触发事件，并且你可以连接现存的observable到Subject。
 ####Controlling the flow 控制流
 ```
 // typing "hello world"

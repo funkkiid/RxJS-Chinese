@@ -17,8 +17,8 @@
 * [Tutorial](tutorial.md)
 
 ## Class Reference
-* Oberver
-* Observable
+* [class-Oberver](oberver.md)
+* [class-Observable](observable.md)
 * Subscription
 * Subscriber
 * SubjectSubscriber
