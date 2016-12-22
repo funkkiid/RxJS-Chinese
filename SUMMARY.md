@@ -16,5 +16,6 @@
 ## Tutorial
 * [Tutorial](tutorial.md)
 
-## Class Reference
+## Reference
+* [C-Observable](references-observable.md)
 
