@@ -21,4 +21,5 @@
 * [bindCallback](bindcallback.md)
 * [bindNodeCallback](bindnodecallback.md)
 * [combineLatest](combinelatest.md)
+* [concat](concat.md)
 
