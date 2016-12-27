@@ -17,5 +17,6 @@
 * [Tutorial](tutorial.md)
 
 ## static Operators
-* [instance Operators](references-observable.md)
+* [what are operators?](what-are-operators.md)
+* bindCallback
 
