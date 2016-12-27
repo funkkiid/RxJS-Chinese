@@ -16,6 +16,6 @@
 ## Tutorial
 * [Tutorial](tutorial.md)
 
-## Reference
-* [C-Observable](references-observable.md)
+## static Operators
+* [instance Operators](references-observable.md)
 
