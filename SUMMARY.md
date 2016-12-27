@@ -22,4 +22,5 @@
 * [bindNodeCallback](bindnodecallback.md)
 * [combineLatest](combinelatest.md)
 * [concat](concat.md)
+* create
 
