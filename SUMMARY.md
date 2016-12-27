@@ -19,4 +19,5 @@
 ## static Operators
 * [what are operators?](what-are-operators.md)
 * [bindCallback](bindcallback.md)
+* [bindNodeCallback](bindnodecallback.md)
 
