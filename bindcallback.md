@@ -4,7 +4,7 @@
 
 
 ```
-bindCallback(inputfn(arg1,...argn,callbackfn),selector,Schedulaer);
+public static bindCallback(func: function, selector: function, scheduler: Scheduler): function(...params: *): Observable
 ```
 
 将一个回调函数API转化为一个能返回一个Observable的函数;
