@@ -29,4 +29,5 @@
 * [from](from.md)
 * [fromEvent](fromevent.md)
 * [fromEventPattern](fromeventpattern.md)
+* [fromPromise](frompromise.md)
 
