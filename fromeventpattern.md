@@ -12,7 +12,11 @@ Rx.Observable.fromEventPattern(addHandler, [removeHandler], [selector])
 ![](/assets/fromEventPattern.png)
 
 
+eg:
 
+
+
+```
 ```
 function addClickHandler(handler) {
   document.addEventListener('click', handler);
@@ -27,5 +31,35 @@ var clicks = Rx.Observable.fromEventPattern(
   removeClickHandler
 );
 clicks.subscribe(x => console.log(x));
+```
+
+f-eg
+```
+    //jQuery
+var input = $('#input');
+
+var source = Rx.Observable.fromEventPattern(
+    function add (h) {
+        input.bind('click', h);
+    },
+    function remove (h) {
+        input.unbind('click', h);
+    }
+);
+
+var subscription = source.subscribe(
+    function (x) {
+        console.log('Next: Clicked!');
+    },
+    function (err) {
+        console.log('Error: ' + err);   
+    },
+    function () {
+        console.log('Completed');   
+    });
+
+input.trigger('click');
+
+// => Next: Clicked!`
 ```
 
