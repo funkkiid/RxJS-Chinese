@@ -27,4 +27,6 @@
 * [empty](empty.md)
 * [forkJoin](forkjoin.md)
 * [from](from.md)
+* [fromEvent](fromevent.md)
+* [fromEventPattern](fromeventpattern.md)
 
