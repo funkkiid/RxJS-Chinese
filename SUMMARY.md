@@ -26,4 +26,5 @@
 * [deffer](deffer.md)
 * [empty](empty.md)
 * [forkJoin](forkjoin.md)
+* [from](from.md)
 
