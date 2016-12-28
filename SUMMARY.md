@@ -23,4 +23,6 @@
 * [combineLatest](combinelatest.md)
 * [concat](concat.md)
 * [create](create.md)
+* [deffer](deffer.md)
+* amb
 
