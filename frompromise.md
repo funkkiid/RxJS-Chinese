@@ -49,3 +49,25 @@ var subscription1 = source1.subscribe(
 // => Next: 42
 // => Completed
 ```
+
+```
+// Create a promise which rejects with an error
+var promise = new RSVP.Promise(function (resolve, reject) {
+    reject(new Error('reason'));
+});
+
+var source1 = Rx.Observable.fromPromise(promise);
+
+var subscription1 = source1.subscribe(
+    function (x) {
+        console.log('Next: ' + x);
+    },
+    function (err) {
+        console.log('Error: ' + err);   
+    },
+    function () {
+        console.log('Completed');   
+    });
+
+// => Error: Error: reason
+```   
