@@ -39,3 +39,37 @@ var result = Rx.Observable.from(iterator).take(10);
 result.subscribe(x => console.log(x));
 ```
 
+f-eg
+
+
+
+```
+function* generateDoubles(seed) {
+  var i = seed;
+  while (true) {
+    yield i;
+    i = 2 * i; // double it
+  }
+}
+
+var iterator = generateDoubles(3);
+var result = Rx.Observable.from(iterator).take(10);
+result.subscribe(x => console.log(x));
+
+```
+
+
+
+```
+var s = new Set(["foo", window]);
+
+Rx.Observable.from(s).subscribe(
+  x => console.log(`onNext: ${x}`),
+  e => console.log(`onError: ${e}`),
+  () => console.log('onCompleted'));
+
+// => onNext: foo
+// => onNext: window
+// => onCompleted
+```
+
