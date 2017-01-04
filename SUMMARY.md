@@ -35,4 +35,5 @@
 * [never](never.md)
 * [of](of.md)
 * [range](range.md)
+* [throw](throw.md)
 
