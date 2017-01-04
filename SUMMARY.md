@@ -37,7 +37,7 @@
 * [range](range.md)
 * [throw](throw.md)
 * [timer](timer.md)
-* toAsync
+* [toAsync](toasync.md)
 * using
 * when
 * while
