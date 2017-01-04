@@ -37,6 +37,11 @@
 * [range](range.md)
 * [throw](throw.md)
 * [timer](timer.md)
+* toAsync
+* using
+* when
+* while
+* wrap
 * [webSocket](websocket.md)
 * [zip](zip.md)
 
