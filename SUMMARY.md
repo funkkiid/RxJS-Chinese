@@ -36,4 +36,6 @@
 * [of](of.md)
 * [range](range.md)
 * [throw](throw.md)
+* [timer](timer.md)
+* [webSocket](websocket.md)
 
