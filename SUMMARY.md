@@ -33,4 +33,5 @@
 * [interval](interval.md)
 * [merge](merge.md)
 * [never](never.md)
+* [of](of.md)
 
