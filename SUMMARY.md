@@ -38,4 +38,5 @@
 * [throw](throw.md)
 * [timer](timer.md)
 * [webSocket](websocket.md)
+* [zip](zip.md)
 
