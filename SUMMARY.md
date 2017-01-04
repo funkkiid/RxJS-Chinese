@@ -38,8 +38,8 @@
 * [throw](throw.md)
 * [timer](timer.md)
 * [toAsync](toasync.md)
-* using
-* when
+* [using](using.md)
+* [when](when.md)
 * while
 * wrap
 * [webSocket](websocket.md)
