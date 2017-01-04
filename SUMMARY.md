@@ -32,4 +32,5 @@
 * [fromPromise](frompromise.md)
 * [interval](interval.md)
 * [merge](merge.md)
+* [never](never.md)
 
