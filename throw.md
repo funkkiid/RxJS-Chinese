@@ -38,3 +38,4 @@ result.subscribe(
 
 eg2-result:
 ![](/assets/throw-result2.png)
+
