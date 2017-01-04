@@ -30,4 +30,6 @@
 * [fromEvent](fromevent.md)
 * [fromEventPattern](fromeventpattern.md)
 * [fromPromise](frompromise.md)
+* [interval](interval.md)
+* [merge](merge.md)
 
