@@ -16,7 +16,7 @@
 ## Tutorial
 * [Tutorial](tutorial.md)
 
-## static Operators
+## static operators
 * [what are operators?](what-are-operators.md)
 * [bindCallback](bindcallback.md)
 * [bindNodeCallback](bindnodecallback.md)
@@ -44,4 +44,6 @@
 * wrap
 * [webSocket](websocket.md)
 * [zip](zip.md)
+
+## instance operators
 
