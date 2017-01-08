@@ -2,16 +2,18 @@
 
 语法:
 ```
-public bufferToggle():Observable<T[]>
+public bufferToggle(openings: SubscribableOrPromise<O>, closingSelector: function(value: O): SubscribableOrPromise): Observable<T[]>
+```
+功能:
+以数组形式收集过去的值。 在opening发射值时开始收集，并调用closingSelector函数获取一个Observable，以告知何时关闭缓存区。
+![](/assets/bufferToggle.png)
+
 ```
 
-![](/assets/bufferWhen.png)
-
-```
-//每隔1~5秒发射一次最新的click事件数组
 var clicks = Rx.Observable.fromEvent(document, 'click');
-var buffered = clicks.bufferWhen(() =>
-  Rx.Observable.interval(1000 + Math.random() * 4000)
+var openings = Rx.Observable.interval(1000);
+var buffered = clicks.bufferToggle(openings, i =>
+  i % 2 ? Rx.Observable.interval(500) : Rx.Observable.empty()
 );
 buffered.subscribe(x => console.log(x));
 ```

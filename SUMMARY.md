@@ -53,4 +53,5 @@
 * [bufferTime](buffertime.md)
 * [bufferToggle](buffertoggle.md)
 * [bufferWhen](bufferwhen.md)
+* [catch](catch.md)
 
