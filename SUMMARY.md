@@ -46,4 +46,11 @@
 * [zip](zip.md)
 
 ## instance operators
+* [audit](audit.md)
+* auditTime
+* buffer
+* bufferCount
+* bufferTime
+* bufferToggle
+* bufferWhen
 
