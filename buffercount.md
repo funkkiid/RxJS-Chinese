@@ -36,7 +36,7 @@ buffered.subscribe(x => console.log(x));
 eg-2-result:
 发射的为三个事件元素组成的数组(即第一个参数设定的值)
 ![](/assets/bufferCount-result2-1.png)
-注意第个数组第三次点击事件发生的**位置**
+注意第二个数组第三次点击事件发生的**位置**
 ![](/assets/bufferCount-result2-2.png)
 继续观察第二个数组，注意第一个事件元素发生的位置
 ![](/assets/bufferCount-result2-3.png)

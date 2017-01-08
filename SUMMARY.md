@@ -50,7 +50,7 @@
 * [auditTime](audittime.md)
 * [buffer](buffer.md)
 * [bufferCount](buffercount.md)
-* bufferTime
+* [bufferTime](buffertime.md)
 * bufferToggle
 * bufferWhen
 
