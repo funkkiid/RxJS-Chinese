@@ -51,6 +51,6 @@
 * [buffer](buffer.md)
 * [bufferCount](buffercount.md)
 * [bufferTime](buffertime.md)
-* bufferToggle
+* [bufferToggle](buffertoggle.md)
 * bufferWhen
 
