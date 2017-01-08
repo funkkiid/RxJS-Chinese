@@ -19,4 +19,4 @@ buffered.subscribe(x => console.log(x));
 eg-result:
 ![](/assets/bufferCount-result.png)
 
-每点击两次，发射一次由之前点击事件组成的事件数组
+每点击两次，发射一次由之前点击事件组成的数组
