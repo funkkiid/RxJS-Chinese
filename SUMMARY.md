@@ -49,7 +49,7 @@
 * [audit](audit.md)
 * [auditTime](audittime.md)
 * [buffer](buffer.md)
-* bufferCount
+* [bufferCount](buffercount.md)
 * bufferTime
 * bufferToggle
 * bufferWhen
