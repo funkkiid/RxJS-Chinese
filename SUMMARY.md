@@ -47,7 +47,7 @@
 
 ## instance operators
 * [audit](audit.md)
-* auditTime
+* [auditTime](audittime.md)
 * buffer
 * bufferCount
 * bufferTime

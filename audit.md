@@ -10,7 +10,7 @@ puiblic audit(durationSelector:function(value:T):Observable):Observable<T>
 * 在某个**持续时间段**内忽略原始observable发射的值
 * 方法的参数为一个**函数**，该函数需返回一个决定持续时长
 的observable或者promise
-* 之后从原始observable发射最近的值，重复这个过程。
+* 之后从原始observable发射最近的值，不断重复这个过程。
 
 >audit很像auditTime，但是其持续时长是由第二个observable所决定。
 
