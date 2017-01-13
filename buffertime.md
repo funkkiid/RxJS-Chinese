@@ -1,26 +1,24 @@
-###bufferTime
+### bufferTime
 
+- 语法:
 
-
-
-
-语法:
-```
+```js
 public bufferTime(bufferTimeSpan:number,[bufferCreationInterval:numbewr],[maxBufferSize:number],[scheduler:Scheduler]):Observable<T[]>
 ```
-params:
-
-arg1: **必须**、bufferTimeSpan设置发射值的时间间隔
-arg2: 可选、设置打开缓存区和发射值的时间间隔
-arg2: 可选、设置缓存区长度
-scheduler: 可选
-功能:
+    params:
+        arg1: **必须**、bufferTimeSpan设置发射值的时间间隔
+        arg2: 可选、设置打开缓存区和发射值的时间间隔
+        arg2: 可选、设置缓存区长度
+        scheduler: 可选
+    
+- 功能:
 把过去的值放入一个缓存区，并且按时间定期发射这些数组
 
 ![](/assets/bufferTime.png)
 
 eg-1：
-```
+
+```js
 //只有第一个参数时
 //每间隔一秒发射一次，数据包含在该时间段的值
 var clicks = Rx.Observable.fromEvent(document, 'click');
@@ -38,14 +36,14 @@ eg-1-result:
 ![](/assets/bufferTime-result-1.png)
 
 eg-2
-```
-//有前两个参数时
+```js
+// 有前两个参数时
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var buffered = clicks.bufferTime(2000, 5000);
 buffered.subscribe(x => console.log(x));
 ```
 eg-2
-```
+```js
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var buffered = clicks.bufferTime(2000, 5000);
 buffered.subscribe(x => console.log(x));

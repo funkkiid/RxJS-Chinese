@@ -1,14 +1,17 @@
-###bufferToggle
+### bufferToggle
 
-语法:
-```
+- 语法:
+
+```ts
 public bufferToggle():Observable<T[]>
 ```
 
 ![](/assets/bufferWhen.png)
 
-```
-//每隔1~5秒发射一次最新的click事件数组
+eg: 
+
+```js
+// 每隔1~5秒发射一次最新的click事件数组
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var buffered = clicks.bufferWhen(() =>
   Rx.Observable.interval(1000 + Math.random() * 4000)

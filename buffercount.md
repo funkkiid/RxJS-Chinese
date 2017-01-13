@@ -1,19 +1,20 @@
-###bufferCount
+### bufferCount
 
-语法：
-```
+- 语法：
+
+```ts
 public bufferCount(bufferSize: Number,startBufferEvery):Observable<T[]>
 ```
 
-功能：缓存原始observable发射的值，直到达到bufferSize给定的上限
+- 功能：
+缓存原始observable发射的值，直到达到bufferSize给定的上限
 
 ![](/assets/bufferCount.png)
 
-
-
 eg:
-```
-//每点击2次，发射一次由之前点击事件组成的数组
+
+```js
+// 每点击2次，发射一次由之前点击事件组成的数组
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var buffered = clicks.bufferCount(2);
 buffered.subscribe(x => console.log(x));
@@ -23,11 +24,10 @@ eg-result:
 
 ![](/assets/bufferCount-result.png)
 
-
-
 eg-2(第二个参数的作用)：
-```
-//首次点击3次，发射一次由之前三次点击事件组成的数组。之后，每点击两次发射一次重置产生新数组，新数组的长度为3，第一个元素为上次发射数组的最后一个元素，后两个元素为本次2次点击事件。具体看结果截图，注意观察点击事件发生的**位置**。
+
+```js
+// 首次点击3次，发射一次由之前三次点击事件组成的数组。之后，每点击两次发射一次重置产生新数组，新数组的长度为3，第一个元素为上次发射数组的最后一个元素，后两个元素为本次2次点击事件。具体看结果截图，注意观察点击事件发生的**位置**。
 
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var buffered = clicks.bufferCount(2, 1);

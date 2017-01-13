@@ -1,13 +1,17 @@
-###toAsync
+### toAsync
 
-语法：
-```
+- 语法：
+
+```ts
 Rx.Observable.toAsync(function:Function,[scheduler],[context]):Function
 ```
 
-功能：
+- 功能：
 将函数转换为异步函数。 生成的异步函数的每次调用都会导致调用指定调度程序上的原始同步函数。
-```
+
+eg:
+
+```js
 var func = Rx.Observable.toAsync(function (x, y) {
     return x + y;
 });

@@ -40,8 +40,8 @@
 * [toAsync](toasync.md)
 * [using](using.md)
 * [when](when.md)
-* while
-* wrap
+* [while](while.md)
+* [wrap](wrap.md)
 * [webSocket](websocket.md)
 * [zip](zip.md)
 

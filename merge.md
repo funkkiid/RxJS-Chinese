@@ -1,20 +1,20 @@
-###merge
+### merge
 
-语法：
+- 语法：
 
-```
+```ts
 public static merage(observable:...Observable,conurrent:number,scheduler:Schedule):Observable
 ```
-功能：创建一个发射所有被合并的observable所发射的值。
+- 功能：创建一个发射所有被合并的observable所发射的值。
 
->通过将多个观察者的值合并到一个观察者中进行发射。
+> 通过将多个观察者的值合并到一个观察者中进行发射。
 
 ![](/assets/merge.png)
 
 输出Observable只有在所有输入Observable完成后才会完成。 由输入Observable传递的任何错误将立即在输出Observable上发出。
 
 eg:
-```
+```js
 var clicks = Rx.Observable.fromEvent(document, 'click');
 var timer = Rx.Observable.interval(1000);
 var clicksOrTimer = Rx.Observable.merge(clicks, timer);
@@ -22,7 +22,7 @@ clicksOrTimer.subscribe(x => console.log(x));
 
 ```
 
-```
+```js
 //Merge together 3 Observables, but only 2 run concurrently
 
 var timer1 = Rx.Observable.interval(1000).take(10);
@@ -35,7 +35,8 @@ merged.subscribe(x => console.log(x));
 
 
 f-eg:
-```
+
+```js
 var source1 = Rx.Observable.interval(100)
     .timeInterval()
     .pluck('interval');
