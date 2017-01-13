@@ -1,16 +1,15 @@
-###create
+### create
 
+- 语法:
 
-语法:
-```
+```ts
 public static create(subscribe: function(subscriber: Subscriber): TeardownLogic): Observable
 ```
 
-功能:
-
+- 功能:
 创建一个新的Observable，当被订阅时，它将执行指定的函数。
 
->创建一个拥有在订阅函数中给定逻辑的可观察对象
+> 创建一个拥有在订阅函数中给定逻辑的可观察对象
 
 ![](/assets/a3.png)
 
@@ -20,7 +19,7 @@ create将subscribe函数转换为实际的Observable。 这相当于调用Observ
 
 
 eg:
-```
+```js
 var result = Rx.Observable.create(function (subscriber) {
   subscriber.next(Math.random());
   subscriber.next(Math.random());

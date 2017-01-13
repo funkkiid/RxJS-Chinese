@@ -1,11 +1,13 @@
-###range
+### range
 
-语法：
-```
+- 语法：
+
+```ts
 public static range(start:number,count:number,scheduler:Scheduler):Observable
 ```
 
-功能：创建发射一个数字序列的observable
+- 功能：
+创建发射一个数字序列的observable
 
 ![](/assets/rangge.png)
 
@@ -15,7 +17,7 @@ range按顺序发出一系列连续整数，参数分别为起点和长度(注�
 
 eg:
 
-```
+```js
 var numbers = Rx.Observable.range(1, 10);
 numbers.subscribe(x => console.log(x));
 ```
@@ -24,7 +26,8 @@ result:
 
 
 f-eg:
-```
+
+```js
 var source = Rx.Observable.range(0, 3);
 
 var subscription = source.subscribe(

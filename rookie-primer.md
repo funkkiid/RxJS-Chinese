@@ -2,7 +2,7 @@ _本篇对应于官方的介绍篇，因英文介绍与gitbook文件名冲突�
 
 
 RxJS是一个通过使用可观察序列来构建**异步**和**基于事**件的程序的库。它提供了一个核心类型:**Observable**、卫星类型(大概是这些类型均围绕于Observable，也就是Observable是根基，而这些是辅助类型):**Observer**、**Schedulers**、**Subjects**)和操作符:衍生自一些数组方法，使得我们可以把异步事件以集合的方式进行处理。
->把RxJS当做一个针对事件的Lodash(一个JS库)。
+> 把RxJS当做一个针对事件的Lodash(一个JS库)。
 
 ReactiveX将观察者模式与迭代器模式和使用集合的函数式编程组合在一起，来满足这种管理事件序列的理想方式
 
@@ -18,29 +18,29 @@ RxJS中解决异步事件管理的基本概念如下：
 # 第一个例子
 通常你这样注册事件监听：
 
-```
+```js
 var button = document.querySelector('button');
 button.addEventListener('click', () => console.log('Clicked!'));
 ```
 使用RxJS创建一个可观察对象：
-```
+```js
 var button = document.querySelector('button');
 Rx.Observable.fromEvent(button, 'click')
 .subscribe(() => console.log('Clicked!'));
 ```
 
-#Purity
+# Purity
 RxJX能够使用纯函数的方式生产值的能力使得它强大无比。这意味着你的代码不再那么频繁的出现错误提示。
 
 通常情况下你会创造一个非纯粹的函数，然后你的代码的其他部分可能搞乱你的程序状态。
-```
+```js
 var count = 0;
 var button = document.querySelector('button');
 button.addEventListener('click', () => console.log(`Clicked ${++count} times`));
 ```
 使用RxJS来隔离你的状态
 
-```
+```js
 var button = document.querySelector('button');
 Rx.Observable.fromEvent(button, 'click')
 .scan(count => count + 1, 0)
@@ -48,7 +48,7 @@ Rx.Observable.fromEvent(button, 'click')
 
 ```
 scan操作符和数组中reduce方法的类似， 它需要一个传递给回调函数的参数值。 回调函数的返回值将成为下一次回调函数运行时要传递的下一个参数值。
-#Flow 流
+# Flow 流
 
 RxJS有着众多的操作符，可以帮助您控制事件如何流入可观察对象observables。
 
@@ -56,7 +56,7 @@ RxJS有着众多的操作符，可以帮助您控制事件如何流入可观察�
 每秒最多只能点击一次的实现，使用纯JavaScript：
 
 
-```
+```js
 var count = 0;
 var rate = 1000;
 var lastClick = Date.now() - rate;
@@ -71,8 +71,7 @@ lastClick = Date.now();
 ```
 使用RxJS
 
-
-```
+```js
 var button = document.querySelector('button');
 Rx.Observable.fromEvent(button, 'click')
 .throttleTime(1000)
@@ -81,7 +80,7 @@ Rx.Observable.fromEvent(button, 'click')
 ```
 
 其他的流操作符是filter, delay, debounceTime, take, takeUntil, distinct, distinctUntilChanged 等等。
-#Values值
+# Values值
 你可以通过可观察对象来转化值
 
 下面的程序可以在每次点击鼠标时获取X坐标位置
@@ -90,8 +89,7 @@ Rx.Observable.fromEvent(button, 'click')
 
 
 
-```
-
+```js
 var count = 0;
 var rate = 1000;
 var lastClick = Date.now() - rate;
@@ -106,7 +104,7 @@ lastClick = Date.now();
 
 RxJS实现
 
-```
+```js
 var button = document.querySelector('button');
 Rx.Observable.fromEvent(button, 'click')
 .throttleTime(1000)

@@ -1,22 +1,21 @@
-###from
-语法:
+### from
 
+- 语法:
 
-```
+```ts
 public static from(ish: ObservableInput<T>, scheduler: Scheduler): Observable<T>
 ```
 
-功能：将一个数组、类数组(字符串也可以)，Promise、可迭代对象，类可观察对象、转化为一个Observable
+- 功能：将一个数组、类数组(字符串也可以)，Promise、可迭代对象，类可观察对象、转化为一个Observable
 
->可将几乎所有的东西转化一个可观察对象
+> 可将几乎所有的东西转化一个可观察对象
 
 ![](/assets/from.png)
 
 eg:
 
-
-```
-//数组=>Observable
+```js
+// 数组=>Observable
 var array = [10, 20, 30];
 var result = Rx.Observable.from(array);
 result.subscribe(x => console.log(x));
@@ -24,8 +23,8 @@ result.subscribe(x => console.log(x));
 
 
 
-```
-//无限迭代对象=>Observable
+```js
+// 无限迭代对象=>Observable
 function* generateDoubles(seed) {
   var i = seed;
   while (true) {
@@ -41,9 +40,7 @@ result.subscribe(x => console.log(x));
 
 f-eg
 
-
-
-```
+```js
 function* generateDoubles(seed) {
   var i = seed;
   while (true) {
@@ -58,9 +55,7 @@ result.subscribe(x => console.log(x));
 
 ```
 
-
-
-```
+```js
 var s = new Set(["foo", window]);
 
 Rx.Observable.from(s).subscribe(

@@ -9,7 +9,7 @@
 
 下面的例子是一个推送1,2，3,4数值的可观察对象，一旦它被订阅1,2，3,就会被推送，4则会在订阅发生一秒之后被推送，紧接着完成推送。
 
-```
+```js
 var observable = Rx.Observable.create(function (observer) {
 observer.next(1);
 observer.next(2);
@@ -23,7 +23,7 @@ observer.complete();
 
 调用可观察对象然后得到它所推送的值，我们订阅它，如下
 
-```
+```js
 console.log('just before subscribe');
 observable.subscribe({
 next: x => console.log('got value ' + x),
@@ -45,7 +45,7 @@ got value 4
 done
 ```
 
-### Pull拉取VSPush推送
+## Pull拉取 VS Push推送
 
 拉和推是数据生产者和数据的消费者两种不同的交流协议\(方式\)
 
@@ -71,7 +71,7 @@ RxJS引入了Observables\(可观察对象\)，一个全新的"推体系"。一�
 * Promise是一个可能\(也可能不\)返回一个单值的计算。
 * Observable是一个从它被调用开始，可异步或者同步的返回零到多个值的惰性执行运算。
 
-### 可观察对象——作为更一般化的函数
+## 可观察对象——作为更一般化的函数
 
 与常见的主张相悖的是，可观察对象不像EventEmitters\(事件驱动\)，也不象Promises因为它可以返回多个值。可观察对象可能会在某些情况下有点像EventEmitters\(事件驱动\)，也即是当它们使用Subjects被多播时，但是大多数情况下，并不像EventEmitters.
 
@@ -79,7 +79,7 @@ RxJS引入了Observables\(可观察对象\)，一个全新的"推体系"。一�
 
 思考下面的程序
 
-```
+```js
 function foo() {
 console.log('Hello');
 return 42;
@@ -102,7 +102,7 @@ console.log(y);
 
 使用Observables得到同样的结果
 
-```
+```js
 var foo=Rx.Observable.create(function(observer){
 console.log('Hello');
 observer.next(42);
@@ -128,7 +128,7 @@ console.log(y);
 
 一些人认为可观察对象是异步的。这并不确切，如果你用一些log语句包围在订阅程序的前后:
 
-```
+```js
 console.log('before');
 console.log(foo.call());
 console.log('after');
@@ -146,7 +146,7 @@ before"
 
 类似的，使用可观察对象:
 
-```
+```js
 console.log('before');
 foo.subscribe(function (x) {
 console.log(x);
@@ -169,7 +169,7 @@ console.log('after');
 
 好吧，调转方向，说一说可观察对象和函数的不同之处。可观察对象可以随时间"return"多个值。然而函数却做不到，你不能够使得如下的情况发生:
 
-```
+```js
 function foo() {
 console.log('Hello');
 return 42;
@@ -179,7 +179,7 @@ return 100; // dead code. will never happen
 
 函数仅仅可以返回一个值，然而，不要惊讶，可观察对象却可以做到这些。
 
-```
+```js
 var foo = Rx.Observable.create(function (observer) {
 console.log('Hello');
 observer.next(42);
@@ -207,7 +207,7 @@ console.log('after');
 
 当然，你也可以以异步的方式返回值。
 
-```
+```js
 var foo = Rx.Observable.create(function (observer) {
 console.log('Hello');
 observer.next(42);
@@ -241,7 +241,8 @@ console.log('after');
 
 * fun.call\(\)意味着同步的给我**一个**值
 * observable.subscribe\(\)意味着给我_**任意多个**_值，同步也好异步也罢。
-  ## 剖析可观察对象
+
+## 剖析可观察对象
 
   使用Rx.Observable.create或者一个能产生可观察对象的操作符来创造一个可观察对象，使用一个观察者订阅它，执行然后给观察者发送next/error/complete通知。他们的执行可能会被disposed\(处理\)。这四个方面均被编码进可观察对象的实例中。但是其中的某些方面和其他的类型有关，如Observer和Subscription
 
@@ -258,7 +259,7 @@ Rx.Observable.create 是可观察对象构造函数的别名，它接受一个�
 
 下面的例子创造一每秒向观察者发射一个字符串"hi"的可观察对象。
 
-```
+```js
 var observable = Rx.Observable.create(function subscribe(observer) {
 var id = setInterval(() => {
 observer.next('hi')
@@ -274,7 +275,7 @@ observer.next('hi')
 
 观察对象可以像下面的例子那样被订阅:
 
-```
+```js
 observable.subscribe(x => console.log(x));
 ```
 
@@ -309,7 +310,7 @@ next*(error|complete)?
 
 下面这个例子，可观察对象执行然后发送三个next通知，然后completes:
 
-```
+```js
 var observable = Rx.Observable.create(function subscribe(observer) {
 observer.next(1);
 observer.next(2);
@@ -320,7 +321,7 @@ observer.complete();
 
 可观察对象严格的坚守这个契约，所以，下面的代码将不会发送包含数值4的next通知
 
-```
+```js
 var observable = Rx.Observable.create(function subscribe(observer) {
 observer.next(1);
 observer.next(2);
@@ -332,7 +333,7 @@ observer.next(4); // Is not delivered because it would violate the contract
 
 不失为一个好方式的是，使用try/catch语句包裹通知语句，如果捕获了异常将会发送一个错误通知。
 
-```
+```js
 var observable = Rx.Observable.create(function subscribe(observer) {
 try {
 observer.next(1);
@@ -351,13 +352,13 @@ observer.error(err); // delivers an error if it caught one
 
 当observable.subscribe被调用，观察者将专注于最新被创建的可观察对象的执行，并且这个调用返回一个对象:the SUbscription
 
-```
+```js
 var subscription = observable.subscribe(x => console.log(x));
 ```
 
 the Subscription\(订阅\)表示正在进行的执行，这里有一个用于终止执行的小型的API。 阅读更多关于[Subscription](http://reactivex.io/rxjs/manual/overview.html#subscription)的信息。使用subscription.unsubscribe\(\)你可以取消正在进行的执行:
 
-```
+```js
 var observable = Rx.Observable.from([10, 20, 30]);
 var subscription = observable.subscribe(x => console.log(x));
 // Later:
@@ -370,7 +371,7 @@ subscription.unsubscribe();
 
 作为示例，下面是怎样去清除一个serInterval间隔执行
 
-```
+```js
 var observable = Rx.Observable.create(function subscribe(observer) {
 // Keep track of the interval resource
 var intervalID = setInterval(() => {
@@ -386,7 +387,7 @@ clearInterval(intervalID);
 
 就像observable.subscribe类似于Observable.create\(function subscribe\(\){...}\),我们从subscribe函数中返回的unsubscribe函数在概念上等价于subscription.unsubscription。事实上，如果我们移除环绕于这些概念之外的ReactiveX类型，也就只剩下更加直观的JavaScript。
 
-```
+```js
 function subscribe(observer) {
 var intervalID = setInterval(() => {
 observer.next('hi');
