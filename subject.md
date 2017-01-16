@@ -16,10 +16,10 @@
 var subject = new Rx.Subject();
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 
 subject.next(1);
@@ -39,10 +39,10 @@ observerB: 2
 var subject = new Rx.Subject();
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 
 var observable = Rx.Observable.from([1, 2, 3]);
@@ -73,10 +73,10 @@ var source=Rx.Observable.from([1,2,3]);
 var subject=new Rx.Subject();
 var multicasted=source.multicast(subject);
 multicasted.subscribe({
-next:(v)=>console.log('observerA:' +v);
+  next:(v)=>console.log('observerA:' +v);
 });
 multicasted.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 multicasted.connect();
 ```
@@ -116,25 +116,26 @@ connect()方法对于在决定何时开始分享可观察对象的执行是非�
 var soource = Rx.Observerable.interval(500);
 var subject = new Rx.Subject();
 var multicasted = source.multicast(subject);
+var subscription1, subscription2, subscriptionConnect;
 subscription1 = multicasted.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 // We should call `connect()` here, because the first
 // subscriber to `multicasted` is interested in consuming values
 subscriptionConnect = multicasted.connect();
 setTimeout(() => {
-subscription2 = multicasted.subscribe({
-next: (v) => console.log('observerB: ' + v)
-});
+  subscription2 = multicasted.subscribe({
+    next: (v) => console.log('observerB: ' + v)
+  });
 }, 600);
 setTimeout(() => {
-subscription1.unsubscribe();
+  subscription1.unsubscribe();
 }, 1200);
 // We should unsubscribe the shared Observable execution here,
 // because `multicasted` would have no more subscribers after this
 setTimeout(() => {
-subscription2.unsubscribe();
-subscriptionConnect.unsubscribe(); // for the shared Observable execution
+  subscription2.unsubscribe();
+  subscriptionConnect.unsubscribe(); // for the shared Observable execution
 }, 2000);
 ```
 如果我们希望避免显式的调用connect()，我们可以使用ConnectableObservable对象的refCount()方法(引用计数)，它返回一个追踪它自身有多少个订阅者的可观察对象。当订阅者的数量从0增加到1，它将会为我们调用connect()，这将开始分享可观察对象的执行。在当且仅在订阅者的数量降低到0的时候它将会完全取消订阅，停掉更进一步的执行。
@@ -150,26 +151,26 @@ var subscription1,subscription2,subscriptionConnect;
 // it is the first subscriber to `refCounted`
 console.log('observerA subscribed');
 subscription1 = refCounted.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 
 setTimeout(() => {
-console.log('observerB subscribed');
-subscription2 = refCounted.subscribe({
-next: (v) => console.log('observerB: ' + v)
-});
+  console.log('observerB subscribed');
+  subscription2 = refCounted.subscribe({
+    next: (v) => console.log('observerB: ' + v)
+  });
 }, 600);
 
 setTimeout(() => {
-console.log('observerA unsubscribed');
-subscription1.unsubscribe();
+  console.log('observerA unsubscribed');
+  subscription1.unsubscribe();
 }, 1200);
 
 // This is when the shared Observable execution will stop, because
 // `refCounted` would have no more subscribers after this
 setTimeout(() => {
-console.log('observerB unsubscribed');
-subscription2.unsubscribe();
+  console.log('observerB unsubscribed');
+  subscription2.unsubscribe();
 }, 2000);
 ```
 上面的例子得到如下的输出:
@@ -196,14 +197,14 @@ Subjects的一个变体是BehaviorSubject,其有"当前值"的概念。它**储�
 var subject = new Rx.BehaviorSubject(0); // 0 is the initial value
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 
 subject.next(1);
 subject.next(2);
 
 subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 
 subject.next(3);
@@ -228,7 +229,7 @@ observerB: 3
 var subject = new Rx.ReplaySubject(3); // buffer 3 values for new subscribers ，注:缓存了三个值。
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 
 subject.next(1);
@@ -237,7 +238,7 @@ subject.next(3);
 subject.next(4);
 
 subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 
 subject.next(5);
@@ -260,16 +261,16 @@ observerB: 5
 var subject = new Rx.ReplaySubject(100, 500 /* windowTime */);
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 
 var i = 1;
 setInterval(() => subject.next(i++), 200);
 
 setTimeout(() => {
-subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
-});
+  subject.subscribe({
+    next: (v) => console.log('observerB: ' + v)
+  });
 }, 1000);
 ```
 输出如下:
@@ -293,7 +294,7 @@ AsyncSubject是另一个变体，它只发送给观察者可观察对象执行�
 var subject = new Rx.AsyncSubject();
 
 subject.subscribe({
-next: (v) => console.log('observerA: ' + v)
+  next: (v) => console.log('observerA: ' + v)
 });
 
 subject.next(1);
@@ -302,7 +303,7 @@ subject.next(3);
 subject.next(4);
 
 subject.subscribe({
-next: (v) => console.log('observerB: ' + v)
+  next: (v) => console.log('observerB: ' + v)
 });
 
 subject.next(5);
