@@ -1,8 +1,8 @@
-###webSocket
+### webSocket
 
-语法：
+- 语法：
 
-```
+```ts
 public static webSocket(urlConfigOrSource: *): WebSocketSubject
 ```
 

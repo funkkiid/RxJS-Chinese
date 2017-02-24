@@ -1,18 +1,17 @@
-###forkJoin
+### forkJoin
 
-语法:
+- 语法:
 
-
+```ts
 Rx.Observable.forkJoin(...args [resultSelector])
 ```
 
-功能：
+- 功能：
 并行运行所有可观察序列并收集其最后的元素。
 
 f-eg:
 
-
-```
+```js
 /* Using observables and Promises */
 var source = Rx.Observable.forkJoin(
     Rx.Observable.return(42),

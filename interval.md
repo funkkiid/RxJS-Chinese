@@ -1,11 +1,13 @@
-###interval
+### interval
 
-语法
-```
+- 语法:
+
+```ts
 public static interval(period: number, scheduler: Scheduler): Observable
 ```
 
-功能： 返回一个以周期性的、递增的方式发射值的Observable
+- 功能:
+返回一个以周期性的、递增的方式发射值的Observable
 
 
 ![](/assets/rxjs.png)
@@ -13,14 +15,14 @@ public static interval(period: number, scheduler: Scheduler): Observable
 
 eg:
 
-```
+```js
 var numbers = Rx.Observable.interval(1000);
 numbers.subscribe(x => console.log(x));
 ```
 
 f-eg:
 
-```
+```js
 var source = Rx.Observable
     .interval(500 /* ms */)
     .timeInterval()
