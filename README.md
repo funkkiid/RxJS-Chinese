@@ -7,4 +7,4 @@
 
 TS中文文档[TypeScript](http://www.tslang.cn/docs/tutorial.html)
 
-纠错邮箱:zh_buctwbzs@163.com(zh，姓名缩写，buct某高校英文缩写，wbzs,歪脖子树)
+纠错邮箱:zh_buctwbzs@163.com(zh，姓名缩写，下划线无意义，buct某高校英文缩写，wbzs,歪脖子树)
