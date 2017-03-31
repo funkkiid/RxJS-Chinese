@@ -74,7 +74,7 @@ eg-2-result:
 
 
 **补充一个明了的例子**。
-```
+```js
 var interval = Rx.Observable.interval(1000).bufferCount(3,4).subscribe(
     function(arr){
         console.log(arr);
