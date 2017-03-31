@@ -51,6 +51,5 @@ buffered.subscribe(x => console.log(x));
 如果给定了bufferCreationInterval，则此操作符每隔bufferCreationInterval毫秒打开缓冲区，并且每隔bufferTimeSpan毫秒关闭（发射和重置）缓冲区。 当指定可选参数maxBufferSize时，缓冲区将在bufferTimeSpan毫秒后或包含maxBufferSize元素时关闭。
 
 
-**注意**
 
-文档说'每隔bufferTimeSpan' 发射一次，但是我每次都是每隔bufferCreationInterval发射值，原因可能是文档出错或者我理解有误。该问题已经提交为一个issue，之后会更新。
+
