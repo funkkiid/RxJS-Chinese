@@ -1,6 +1,7 @@
 # Summary
 
 ## Overview
+
 * [Introduction](README.md)
 * [Rookie primer](rookie-primer.md)
 * [Observable](observable.md)
@@ -11,12 +12,15 @@
 * [Scheduler](scheduler.md)
 
 ## Installation
+
 * [Installation](installtion.md)
 
 ## Tutorial
+
 * [Tutorial](tutorial.md)
 
 ## static operators
+
 * [what are operators?](what-are-operators.md)
 * [bindCallback](bindcallback.md)
 * [bindNodeCallback](bindnodecallback.md)
@@ -46,6 +50,7 @@
 * [zip](zip.md)
 
 ## instance operators
+
 * [audit](audit.md)
 * [auditTime](audittime.md)
 * [buffer](buffer.md)
@@ -54,4 +59,6 @@
 * [bufferToggle](buffertoggle.md)
 * [bufferWhen](bufferwhen.md)
 * [catch](catch.md)
+* [combineAll](combineall.md)
+* [combineLatest](combinelatest.md)
 
