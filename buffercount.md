@@ -73,5 +73,17 @@ eg-2-result:
 
 
 
+**补充一个明了的例子**。
+```
+var interval = Rx.Observable.interval(1000).bufferCount(3,4).subscribe(
+    function(arr){
+        console.log(arr);
+    }
+)
+```
+![](/assets/bufferCountAdd.png)
+第二个参数直白点来说就是下一个缓存区的起点相对于上个缓存区起点的偏移量，取值范围是大于0，当第一个参数大于第二个时，则会忽略中间得发射至。
+
+
 
 
