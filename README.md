@@ -8,7 +8,5 @@
 
 TS中文文档[TypeScript](http://www.tslang.cn/docs/tutorial.html)
 
-纠错邮箱:zh\_buctwbzs@163.com\(zh，姓名缩写，下划线无意义，buct某高校英文缩写，wbzs,歪脖子树\)
 
-今天突然被一个小伙伴告知，本文档被大漠老师在他的视频里推荐了，万分感谢。
 
