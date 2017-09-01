@@ -53,7 +53,7 @@ done
 
 每一个JS函数都是一个“拉”体系，函数是数据的生产者，调用函数的代码通过“拉出”一个单一的返回值来消费该数据\(return 语句\)。
 
-ES6介绍了[iterator迭代器](http://es6.ruanyifeng.com/#docs/iterator)和[Generator生成器](http://es6.ruanyifeng.com/#docs/generator)——另一中“拉”体系，调用iterator.next\(\)的代码是消费者，可从中拉取_多个值_。
+ES6介绍了[iterator迭代器](http://es6.ruanyifeng.com/#docs/iterator)和[Generator生成器](http://es6.ruanyifeng.com/#docs/generator)——另一种“拉”体系，调用iterator.next\(\)的代码是消费者，可从中拉取_多个值_。
 
 |  | producer | Consumer |
 | :--- | :--- | :--- |
